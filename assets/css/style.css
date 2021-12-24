@@ -208,5 +208,8 @@ p {
     height: 4rem;
     margin-left: 1rem;
     background-color: var(--theme-elevation-04-dp);
+    background-size: 140%;
+    background-repeat: no-repeat;
+    background-position: center;
     border-radius: 50%;
 }
