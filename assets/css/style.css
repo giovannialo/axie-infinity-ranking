@@ -1,0 +1,194 @@
+/*
+ * Settings
+ */
+:root {
+    --theme-surface: #121212;
+    --theme-outline: rgba(255, 255, 255, .12);
+    --theme-on-surface-high-emphasis: rgba(255, 255, 255, .87);
+    --theme-on-surface-medium-emphasis: rgba(255, 255, 255, .6);
+    --theme-on-surface-disabled: rgba(255, 255, 255, .38);
+    --theme-on-primary-high-emphasis: #000;
+    --theme-on-primary-medium-emphasis: rgba(0, 0, 0, .74);
+    --theme-on-primary-disabled: rgba(0, 0, 0, .38);
+    --theme-elevation-01-dp: #1e1e1e;
+    --theme-elevation-02-dp: #232323;
+    --theme-elevation-03-dp: #252525;
+    --theme-elevation-04-dp: #272727;
+    --theme-elevation-06-dp: #2c2c2c;
+    --theme-elevation-08-dp: #2f2f2f;
+    --theme-elevation-12-dp: #333333;
+    --theme-elevation-16-dp: #353535;
+    --theme-elevation-24-dp: #383838;
+    --theme-primary: #bb86fc;
+    --theme-secondary: #03dac5;
+    --theme-white: #ffffff;
+    --theme-black: #000000;
+    --theme-text-muted: var(--theme-on-surface-disabled);
+    --theme-border-radius: .25rem;
+    --theme-font-weight-light: 300;
+    --theme-font-weight-normal: 400;
+    --theme-font-weight-medium: 500;
+    --theme-font-weight-bold: 700;
+}
+
+
+/*
+ * Reset
+ */
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: var(--theme-font-weight-normal);
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: .875rem;
+    color: var(--theme-on-surface-medium-emphasis);
+    background-color: var(--theme-surface);
+}
+
+
+/*
+ * Typography
+ */
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+    margin-bottom: .5rem;
+    font-weight: var(--theme-font-weight-medium);
+    color: var(--theme-on-surface-high-emphasis);
+}
+
+h1, .h1 {
+    font-size: 2.5rem;
+}
+
+h2, .h2 {
+    font-size: 2rem;
+}
+
+h3, .h3 {
+    font-size: 1.75rem;
+}
+
+h4, .h4 {
+    font-size: 1.5rem;
+}
+
+h5, .h5 {
+    font-size: 1.25rem;
+}
+
+h6, .h6 {
+    font-size: 1.125rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+.lead {
+    font-size: 1.25rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+/*
+ * Color
+ */
+.text-primary {
+    color: var(--theme-primary);
+}
+
+.text-secondary {
+    color: var(--theme-secondary);
+}
+
+
+/*
+ * Layout
+ */
+.container {
+    width: 640px;
+    margin: 10rem auto;
+}
+
+
+/*
+ * Margin
+ */
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.mb-1 {
+    margin-bottom: .25rem;
+}
+
+.mb-2 {
+    margin-bottom: .5rem;
+}
+
+.mb-3 {
+    margin-bottom: 1rem;
+}
+
+.mb-4 {
+    margin-bottom: 2rem;
+}
+
+.mb-5 {
+    margin-bottom: 2.5rem;
+}
+
+
+/*
+ * Account
+ */
+.account {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: .0625rem;
+    padding: 1rem;
+    background-color: var(--theme-elevation-01-dp);
+    border-radius: .25rem;
+}
+
+.account:first-child,
+.account:first-of-type {
+    margin-top: 0;
+}
+
+.account-axie {
+    display: flex;
+}
+
+.account-axie-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    margin-left: 1rem;
+    background-color: var(--theme-elevation-04-dp);
+    border-radius: 50%;
+}
