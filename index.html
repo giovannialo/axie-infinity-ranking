@@ -33,7 +33,7 @@
                     </p>
                 </header>
 
-                <account-display v-for="account in accounts" :account="account"></account-display>
+                <account-display v-for="(account, index) in accounts" :index="index" :account="account" :key="account.id"></account-display>
             </main>
         </div>
 

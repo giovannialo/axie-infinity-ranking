@@ -1,17 +1,19 @@
 app.component('account-display', {
     props: {
-        account: Object
+        account: Object,
+        index: Number
     },
     template:
         `<div class="account">
-        <div class="account-data">
-            <h6>{{ account.name }}</h6>
-            <p class="mb-0">Rank: {{ account.mmr }}</p>
-        </div>
-        <div class="account-axie">
-            <div class="account-axie-item" v-for="axie in axies" :key="axie.id">{{ axie.name }}</div>
-        </div>
-    </div>`,
+            <div class="account-position text-secondary text-center" v-html="position"></div>
+            <div class="account-data">
+                <h6>{{ account.name }}</h6>
+                <p class="mb-0">Rank: {{ account.mmr }}</p>
+            </div>
+            <div class="account-axie ms-auto">
+                <div class="account-axie-item" v-for="axie in axies" :key="axie.id">{{ axie.name }}</div>
+            </div>
+        </div>`,
     data() {
         return {
             axies: [
@@ -28,6 +30,12 @@ app.component('account-display', {
                     name: 'Axie 3'
                 }
             ]
+        }
+    },
+    computed: {
+        position() {
+            const position = this.index + 1;
+            return position !== 1 ? position : '&#127942;';
         }
     }
 });

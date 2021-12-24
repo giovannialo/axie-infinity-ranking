@@ -122,6 +122,10 @@ p {
     color: var(--theme-secondary);
 }
 
+.text-white {
+    color: var(--theme-white);
+}
+
 
 /*
  * Layout
@@ -159,6 +163,10 @@ p {
     margin-bottom: 2.5rem;
 }
 
+.ms-auto {
+    margin-left: auto;
+}
+
 
 /*
  * Account
@@ -166,7 +174,6 @@ p {
 .account {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     margin-top: .0625rem;
     padding: 1rem;
     background-color: var(--theme-elevation-01-dp);
@@ -180,6 +187,17 @@ p {
 
 .account-axie {
     display: flex;
+    position: relative;
+}
+
+.account-position {
+    width: 4rem;
+    margin-right: 1rem;
+    font-size: 2rem;
+}
+
+.account-data h6 {
+    text-transform: uppercase;
 }
 
 .account-axie-item {

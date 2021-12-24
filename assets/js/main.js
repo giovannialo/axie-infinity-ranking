@@ -33,7 +33,7 @@ const app = Vue.createApp({
             const account = data[prop];
 
             list.push({
-                ronin: prop,
+                id: prop,
                 name: account.name,
                 mmr: account.mmr
             });
@@ -48,9 +48,16 @@ const app = Vue.createApp({
         this.accounts = list;
 
         const date = new Date();
+        const day = ('00' + date.getDate()).slice(-2);
+        const month = ('00' + date.getMonth()).slice(-2);
+        const year = date.getFullYear();
+        const hour = ('00' + date.getHours()).slice(-2);
+        const minutes = ('00' + date.getMinutes()).slice(-2);
+        const seconds = ('00' + date.getSeconds()).slice(-2);
+
         const infoCache = document.getElementById('info-cache');
 
-        infoCache.innerText = `Lista atualizada em ${date.getDate()}/${date.getMonth()}/${date.getFullYear()} às ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+        infoCache.innerText = `Lista atualizada em ${day}/${month}/${year} às ${hour}:${minutes}:${seconds}`;
         infoCache.classList.remove('text-secondary');
         infoCache.classList.add('text-primary');
     }
