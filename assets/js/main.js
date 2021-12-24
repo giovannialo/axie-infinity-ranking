@@ -57,15 +57,22 @@ const app = Vue.createApp({
             this.accounts = JSON.parse(localStorage.getItem('accounts'));
         }
 
-        let {data} = await axios.get('https://game-api.axie.technology/api/v1/' + Object.keys(ronins).join(','));
-
         const list = [];
 
-        // Organize ronin data
-        for (const ronin in data) {
+        for (const ronin in ronins) {
+            const {data} = await axios.request({
+                method: 'GET',
+                url: 'https://axie-infinity.p.rapidapi.com/get-update/' + ronin,
+                params: {id: ronin},
+                headers: {
+                    'x-rapidapi-host': 'axie-infinity.p.rapidapi.com',
+                    'x-rapidapi-key': 'e031417413msha47fc868ab91e62p173cfdjsn6c10e9cd12fd'
+                }
+            });
+
             list.push({
-                name: data[ronin].name,
-                mmr: data[ronin].mmr,
+                name: data.leaderboard.name,
+                mmr: data.leaderboard.elo,
                 axies: ronins[ronin].axies.map(axieId => {
                     return {
                         id: axieId,
@@ -73,12 +80,12 @@ const app = Vue.createApp({
                     };
                 })
             });
-        }
 
-        // Sorts in descending order
-        list.sort((a, b) => {
-            return b.mmr - a.mmr;
-        });
+            // Sorts in descending order
+            list.sort((a, b) => {
+                return b.mmr - a.mmr;
+            });
+        }
 
         localStorage.setItem('accounts', JSON.stringify(list));
 
