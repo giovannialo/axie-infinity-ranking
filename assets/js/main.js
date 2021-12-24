@@ -47,6 +47,9 @@ const app = Vue.createApp({
             },
             '0xc5c6150d3368288f2c44ef71192b118728d9dae3': {
                 axies: ['7547473', '5560344', '7756419']
+            },
+            '0xe53faf54d82bd948325e34d3855d76a83cc3f12f': {
+                axies: ['7229152', '6925357', '7630162']
             }
         };
 
@@ -55,7 +58,6 @@ const app = Vue.createApp({
         }
 
         let {data} = await axios.get('https://game-api.axie.technology/api/v1/' + Object.keys(ronins).join(','));
-        console.log(data);
 
         const list = [];
 
