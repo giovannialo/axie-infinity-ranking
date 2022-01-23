@@ -78,7 +78,8 @@ const app = Vue.createApp({
 
             list.push({
                 name: data.leaderboard.name,
-                mmr: data.leaderboard.elo,
+                mmr: data.leaderboard.elo,,
+                slp: (data.slp.total - data.slp.claimableTotal),
                 axies: ronins[ronin].axies.map(axieId => {
                     return {
                         id: axieId,
