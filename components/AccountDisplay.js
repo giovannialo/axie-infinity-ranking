@@ -9,6 +9,7 @@ app.component('account-display', {
             <div class="account-data">
                 <h6 class="mb-1">{{ account.name }}</h6>
                 <p class="mb-0">Rank: {{ account.mmr }}</p>
+                <p class="mb-0">SLP: {{ account.slp }}</p>
             </div>
             <div class="account-axie ms-auto">
                 <div class="account-axie-item" v-for="axie in account.axies" :key="axie.id" :style="{ backgroundImage: 'url(' + axie.image + ')' }"></div>
