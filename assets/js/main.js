@@ -7,7 +7,7 @@ const app = Vue.createApp({
     async mounted() {
         const ronins = {
             '0x68d489411f5e8213319b3ee7fb83fcd8097e4c34': {
-                axies: ['10092054', '10255109', '10817174']
+                axies: ['10924104', '10255109', '10817174']
             },
             '0xd5b5d296360435ba23a167e3c9eaf5cfc39ba9d7': {
                 axies: ['9573010', '10282946', '9625005']
